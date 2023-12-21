@@ -1,0 +1,133 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: fixed; /* o qualsiasi posizione che usi */
+  top: 0; /* Posizione iniziale */
+  transition: top 0.3s;
+  background-color: var(--clr-zinc900);
+  left: 50%; /* Imposta la posizione iniziale a metà del viewport */
+  transform: translateX(
+    -50%
+  ); /* Sposta l'elemento indietro di metà della sua larghezza */
+
+  border-bottom: 2px solid var(--clr-zinc800);
+
+  z-index: 1;
+}
+.hidden {
+  top: -120px; /* Adegua questo valore in base all'altezza del tuo header */
+}
+
+.header-menu {
+  display: none;
+}
+
+.header-bars {
+  color: var(--clr-light);
+  width: var(--size-2xl);
+  height: var(--size-2xl);
+  display: block;
+}
+
+.header-logo {
+  width: var(--size-10xl);
+  height: var(--size-5xl);
+  margin: -2.5rem;
+}
+
+.header-logo iframe {
+  width: var(--size-10xl);
+  height: var(--size-5xl);
+}
+
+@media (min-width: 768px) {
+  .header-menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0 !important;
+    gap: 1em;
+  }
+
+  .header-link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    align-self: flex-end;
+    font-size: var(--size-sm);
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--clr-light);
+    padding: 1em 1em 1em 1em;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+  }
+
+  .header-link p {
+    align-self: center;
+    margin: 0;
+    padding: 0;
+  }
+  .header-link svg {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-list-icon {
+    color: var(--clr-light);
+    width: var(--size-2xl);
+    height: var(--size-2xl);
+    margin-left: -5px;
+    align-self: center;
+    transition: color 0.3s;
+  }
+
+  .header-link:hover,
+  .header-link:hover svg {
+    color: var(--clr-orange500) !important;
+  }
+  .header-line {
+    border: 1px solid var(--clr-light);
+    padding-top: 1.5em;
+    opacity: 0.7;
+  }
+
+  .header-sun {
+    display: block;
+
+    color: var(--clr-light);
+    width: var(--size-base);
+    height: var(--size-base);
+  }
+
+  .header-resume {
+    font-size: var(--size-xs);
+  }
+
+  .header-bars {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-menu {
+    gap: 1.5em;
+  }
+  .header-link {
+    font-size: var(--size-base);
+  }
+
+  .header-sun {
+    width: var(--size-xl);
+    height: var(--size-xl);
+  }
+
+  .header-resume {
+    font-size: var(--size-sm);
+  }
+}
+
